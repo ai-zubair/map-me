@@ -6,6 +6,10 @@ interface Mappable{
   popupContent(): string;
 }
 
+interface Named{
+  name: string;
+}
+
 class LocationMap {
   private googleMap: google.maps.Map;
 
@@ -40,4 +44,4 @@ class LocationMap {
   }
 }
 
-export { LocationMap, Mappable };
+export { LocationMap, Mappable, Named };
