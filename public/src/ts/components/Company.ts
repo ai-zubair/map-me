@@ -17,6 +17,9 @@ class Company {
     }
   }
 
+  popupContent(): string {
+    return `Company Name: ${this.name}\nPhrase: ${this.catchPhrase}`;
+  }
 }
 
 export { Company }

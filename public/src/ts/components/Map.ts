@@ -2,7 +2,8 @@ interface Mappable{
   location: {
     lat: number;
     lng: number;
-  }
+  };
+  popupContent(): string;
 }
 
 class LocationMap {
@@ -19,13 +20,23 @@ class LocationMap {
   }
 
   addMarker(mappable: Mappable){
-    new google.maps.Marker({
+
+    const entityMarker = new google.maps.Marker({
       map: this.googleMap,
       position: {
         lat: mappable.location.lat,
         lng: mappable.location.lng
       }
     })
+
+    const popupWindow = new google.maps.InfoWindow({
+      content: mappable.popupContent()
+    })
+
+    entityMarker.addListener("click",()=>{
+      popupWindow.open(this.googleMap,entityMarker);
+    })
+
   }
 }
 

@@ -15,6 +15,9 @@ class User{
     }
   }
 
+  popupContent(): string {
+    return `User Name: ${this.name}`;
+  }
 }
 
 export { User };
