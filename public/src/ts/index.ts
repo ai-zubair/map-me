@@ -1,12 +1,12 @@
-// import { User } from './components/User';
-// import { Company } from './components/Company';
+import { User } from './components/User';
+import { Company } from './components/Company';
 import { LocationMap } from './components/Map';
-// const user = new User();
-// const company = new Company();
 
-// console.log(user);
-// console.log(company);
+const user = new User();
+const company = new Company();
 
-new LocationMap("map");
+const locationMap = new LocationMap("map");
+locationMap.addMarker(user);
+locationMap.addMarker(company);
 
 
