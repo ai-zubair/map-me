@@ -40,4 +40,4 @@ class LocationMap {
   }
 }
 
-export { LocationMap };
+export { LocationMap, Mappable };
